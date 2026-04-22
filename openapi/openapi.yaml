@@ -183,3 +183,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+  
+  /artists/{artistname}:
+    get:
+      summary: Get a specific artist
+      description: Returns information about a specific artist by their name
+      security:
+        - basicAuth: []
+      parameters:
+        - name: artistname
+          in: path
+          description: The username of the artist to retrieve
+          required: true
+          schema:
+            type: string
+            example: red_velvet
+      responses:
+        200:
+          description: Successfully retrieved artist information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Artist'
+        401:
+          description: Unauthorized - Invalid or missing credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        404:
+          description: Artist not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
