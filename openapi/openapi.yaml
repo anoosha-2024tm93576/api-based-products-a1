@@ -1,0 +1,19 @@
+openapi: 3.1.1
+info:
+  title: Record Label API
+  description: API for managing artists in a record label Database
+  version: 1.0.0
+
+servers:
+  - url: https://localhost:5000
+    description: Local Development Server
+
+security:
+  - basicAuth: []
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication for API access using username and password
