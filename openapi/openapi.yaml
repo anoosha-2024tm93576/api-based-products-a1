@@ -17,3 +17,44 @@ components:
       type: http
       scheme: basic
       description: Basic authentication for API access using username and password
+
+schemas:
+  Artist:
+    type: object
+    properties:
+      username:
+        type: string
+        description: Unique username of the artist
+        example: red_velvet
+      name:
+        type: string
+        description: Full name of the artist
+        example: Red Velvet
+      genre:
+        type: string
+        description: Genre of the artist
+        exmaple: K-Pop
+      albums_published:
+        type: integer
+        description: Number of albums published by the artist
+        example: 4
+    required:
+      - username
+      - name
+      - genre
+      - albums_published
+
+  Error:
+    type: object
+    properties:
+      error:
+        type: string
+        description: Error message
+        example: "Artist not found"
+      code:
+        type: integer
+        description: HTTP status code for the error
+        example: 404
+    required:
+      - error
+      - code
