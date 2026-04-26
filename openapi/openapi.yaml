@@ -33,7 +33,7 @@ schemas:
       genre:
         type: string
         description: Genre of the artist
-        exmaple: K-Pop
+        example: K-Pop
       albums_published:
         type: integer
         description: Number of albums published by the artist
@@ -58,7 +58,7 @@ schemas:
       genre:
         type: string
         description: Genre of the artist
-        exmaple: K-Pop
+        example: K-Pop
       albums_published:
         type: integer
         description: Number of albums published by the artist
